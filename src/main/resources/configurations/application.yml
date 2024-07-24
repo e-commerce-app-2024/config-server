@@ -1,0 +1,13 @@
+eureka:
+  client:
+    service-url:
+      default-zone: https://${eureka.instance.hostname}:8761/eureka/
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+name:
+  value: test
+spring:
+  cloud:
+    config:
+      override-system-properties: false
