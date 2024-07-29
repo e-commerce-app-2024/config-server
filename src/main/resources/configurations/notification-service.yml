@@ -1,0 +1,39 @@
+spring:
+  kafka:
+    consumer:
+      group-id: payment,order
+      auto-offset-reset: earliest
+      isolation-level: read.committed
+      enable-auto-commit: true
+      bootstrap-servers: localhost:9092
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: 'com.ecommerce.app.dto.*'
+        spring.json.type.mapping: orderConfirmation:com.ecommerce.app.dto.order.OrderConfirmation,paymentConfirmation:com.ecommerce.app.dto.payment.PaymentConfirmation
+  mail:
+    host: localhost
+    port: 1025
+    username: ahmedbaz
+    password: ahmedbaz
+    protocol: smtp
+    tls: true
+    properties:
+      mail:
+        smtp:
+          truest: "*"
+        auth: true
+        starttls.enable: true
+        connectiontimeout: 5000
+        timeout: 3000
+        writetimeout: 5000
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: notification_db
+      authentication-database: admin
+
+app:
+  admin:
+    email: developer.baz@gmail.com
