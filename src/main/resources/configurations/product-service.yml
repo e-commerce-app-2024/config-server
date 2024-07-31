@@ -15,3 +15,12 @@ spring:
     change-log: classpath:/db/changelog/changelog-master.xml
     user: ${spring.datasource.username}
     password: ${spring.datasource.password}
+  kafka:
+    consumer:
+      group-id: rollback_purchase
+      auto-offset-reset: earliest
+      isolation-level: read.committed
+      enable-auto-commit: true
+      bootstrap-servers: localhost:9092
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
