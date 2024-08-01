@@ -1,6 +1,6 @@
 spring:
   config:
-    customer-url: http://127.0.0.1:9191/api/v1/customer/
+    customer-url: http://127.0.0.1:8222/api/v1/customer/
   datasource:
     url: jdbc:postgresql://localhost:5433/payment
     driver-class-name: org.postgresql.Driver
