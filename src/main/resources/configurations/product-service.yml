@@ -17,7 +17,7 @@ spring:
     password: ${spring.datasource.password}
   kafka:
     consumer:
-      group-id: rollback_purchase
+      group-id: rollback_purchase,delete_purchase_log
       auto-offset-reset: earliest
       isolation-level: read.committed
       enable-auto-commit: true

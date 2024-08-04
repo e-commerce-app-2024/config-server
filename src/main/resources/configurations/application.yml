@@ -5,9 +5,11 @@ eureka:
   instance:
     hostname: localhost
     prefer-ip-address: true
-name:
-  value: test
 spring:
+  boot:
+    admin:
+      client:
+        url: http://localhost:3333
   cloud:
     config:
       override-system-properties: false
@@ -19,3 +21,10 @@ management:
   tracing:
     sampling:
       probability: 1.0
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
