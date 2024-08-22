@@ -25,5 +25,6 @@ spring:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
       properties:
-        spring.json.type.mapping: orderConfirmation:com.ecommerce.app.dto.OrderConfirmation
+        spring.json.type.mapping:
+          orderConfirmation:com.ecommerce.app.dto.OrderConfirmation, purchaseResponse:com.ecommerce.app.integration.product.model.PurchaseResponse
     bootstrap-servers: localhost:9092
