@@ -29,4 +29,12 @@ spring:
           purchaseResponse:com.ecommerce.app.dto.PurchaseResponse
 
 user-action:
-  save: true
+  save: false
+
+secret:
+  key: 37F3EA2ECE24A597FE9BCEEA7576F
+  issuer: bitnami
+  algorithm: HS512
+access:
+  token:
+    expiration: 10  
