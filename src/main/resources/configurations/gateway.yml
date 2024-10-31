@@ -1,4 +1,10 @@
 spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:9696/realms/ecommerce
+          jwk-set-uri: ${spring.security.oauth2.resourceserver.jwt.issuer-uri}/protocol/openid-connect/certs
   cloud:
     gateway:
       discovery:
@@ -32,3 +38,11 @@ spring:
 
 server:
   port: 8222
+
+tesla:
+  oauth2:
+    client:
+      name: gw
+    claim:
+      name: preferred_username
+
