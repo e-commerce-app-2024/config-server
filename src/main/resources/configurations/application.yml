@@ -28,3 +28,6 @@ management:
   endpoint:
     health:
       show-details: ALWAYS
+redis:
+  host: 127.0.0.1
+  port: 6379
